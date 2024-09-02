@@ -32,7 +32,7 @@
 
 body {
     background-color: var(--background-color);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "TT Firs Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     color: var(--primary-color);
     height: 300dvh;
 }
@@ -47,10 +47,10 @@ nav {
 
 header {
     height: 100px;
-    background: rgb(10,10,10);
-background: linear-gradient(180deg, rgba(10,10,10,1) 0%, rgba(10,10,10,0) 100%);
+    background: linear-gradient(180deg, rgba(10,10,10,1) 0%, rgba(10,10,10,0) 100%);
     position: fixed;
     top: 0px;
+    z-index: 99;
 }
 main{
     margin-top: 80px;
@@ -117,7 +117,6 @@ main{
 
 #notify a {
 
-
     text-decoration: none;
     color: var(--background-color);
     padding: 4px 8px;
@@ -128,6 +127,7 @@ main{
     border-radius: 8px;
     box-shadow: 0 0 0 0 var(--primary-color);
     font-family: "Fira Sans", sans-serif;
+
 }
 
 .textLine {
@@ -149,7 +149,7 @@ main{
         #elementUI {
         font-family: "Nanum Pen Script", cursive;
         font-size: 1.5rem;
-        color: #FF3366 !important;
+        color: var(--secondary-color);
         -webkit-text-stroke-width: 0px;
         position: relative;
         top: -15px;
@@ -176,7 +176,7 @@ main{
 #elementGetPaid{
     font-family: "Nanum Pen Script", cursive;
     font-size: 1rem;
-    color: #FF3366 !important;
+    color: var(--secondary-color);
     -webkit-text-stroke-width: 0px;
     position: relative;
 
@@ -217,7 +217,7 @@ main{
 .textLine:after{
     content: " ";
     display: block;
-    background: #181818;
+    background: var(--background-color-active);
     height: 1px;
     width: 100%;
     position: absolute;
@@ -235,7 +235,9 @@ main{
 .spaceStudants{
     
     margin-top: 2rem;
-
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 
     .titleSpace{
         text-transform: uppercase;
@@ -259,22 +261,152 @@ main{
             display: flex;
             flex-direction: column;
             width: 100%;
+            gap: 0.5rem;
         }
         
     }
 }
 
 
+.inputText{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color:#222;
+    position: relative;
+    padding-left: 0.5rem;
+    border-radius: 6px;
+    min-height: 64px;
+
+
+    span{
+        font-size: 1rem;
+        font-weight: 700;
+        color: rgba(116, 116, 116, 0.8);
+        cursor: text;
+        margin-left: 0.5rem;
+        position: absolute;
+        
+    }
+    input{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0.3rem;
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 1rem;
+        caret-color: var(--secondary-color);
+        width: 100%;
+        
+    }
+
+    &:hover{
+        box-shadow: inset 0 0 0 2px #595959;
+    }
+}
+
+
+.focus{
+    box-shadow: inset 0 0 0 2px var(--secondary-color);
+    background-color: var(--background-color);
+    justify-content: space-around;
+    span{
+        position: relative;
+        top: 5px;
+        color: var(--secondary-color);
+        font-size: 0.8rem;
+    }
+    &:hover{
+        box-shadow: inset 0 0 0 2px var(--secondary-color);
+    }
+}
+.divButton{
+    display: flex;
+    justify-content: center;
+}
+.buttonStudents{
+    
+    
+    text-transform: uppercase;
+    width: 75%;
+    margin-top: 2rem;
+    
+    color: #000;
+    font-size: 1rem;
+    display: block;
+    
+    background: var(--secondary-color);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 60px;
+    
+    cursor: pointer;
+    font-family: "TT Firs Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    
+    &:hover{
+        box-shadow: 0 0 0 2px var(--secondary-color)
+    }
+    }
 
 
 
+.photoStudents{
+    width: 100%;
+}
 
+.photoStudents .gridStudents{
+    display: grid;
+    line-height: 0;
+    padding-right: 1.25rem;
+    grid-template-columns: repeat(10, 1fr);
+    max-width: 100%;
 
+    div{
+    display: block;
+    position: relative;
+    margin: 0 -1.5rem 0 0;
+    border-radius: 50%;
+    width: fit-content;
+    background-color: #FF3366;
+    img{
+        text-align: right;
+        width: 40px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 6px #0a0a0a;
+        
+    }
 
+    &:hover{
+        transform: scale(1.1);
+        z-index: 10;
 
+        img{
+            transition: filter 0.3s ease, mix-blend-mode 0.3s ease;
+            mix-blend-mode: luminosity;
+        }
+    }
+    
+    }
+}
 
+.photoLogos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    line-height: 0;
+    
 
+        img{
+            width:100%;
+            opacity: 0.5;
 
+            &:hover{
+                opacity: 1;
+            }
+        }
+    
+    
+}
 
 
 
