@@ -7,11 +7,6 @@ const inputFocus = document.querySelectorAll('.inputText input')
 const labelFocus = document.querySelectorAll('.inputText')
 inputFocus.forEach((input, index) => {
     input.addEventListener('focus', () => {
-        labelFocus.forEach((label, i) => {
-            if (inputFocus[i].value == '') {
-                label.classList.remove('focus')
-            }
-        })
         labelFocus[index].classList.add('focus')
     })
 
@@ -20,7 +15,6 @@ inputFocus.forEach((input, index) => {
             labelFocus[index].classList.remove('focus')
         }
     })
-
 })
 
 const cores = ['green', 'red', 'blue', 'pink', 'orange', 'purple']
@@ -38,3 +32,12 @@ const logos = document.querySelector('.photoLogos')
 for (let x = 1; x <= 9; x++) {
     logos.innerHTML += `<img src="./assets/logophotos/logo${x}.png" alt="logo${x}">`
 }
+
+window.addEventListener('scroll',()=>{
+    
+    if(window.scrollY > 150){
+        document.querySelector('#notify a').style.backgroundColor = '#FF3366'
+    }else{
+        document.querySelector('#notify a').style.backgroundColor = ''
+    }
+})

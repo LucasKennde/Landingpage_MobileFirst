@@ -2,11 +2,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
+@import url('https://fonts.cdnfonts.com/css/tt-firs-neue-trl');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     transition: all 0.2s ease-out;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -34,6 +37,16 @@ p {
     margin-inline-end: 0px;
     unicode-bidi: isolate;
 }
+a {
+    color: inherit;       
+    text-decoration: none; 
+    background-color: transparent; 
+    border: none;         
+    padding: 0;            
+    margin: 0;            
+    font: inherit;         
+    cursor: pointer;       
+}
 
 .wrapper {
     width: 100%;
@@ -52,7 +65,7 @@ body {
     background-color: var(--background-color);
     font-family: "TT Firs Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     color: var(--primary-color);
-    height: 300dvh;
+    height: 1000dvh;
 }
 
 nav {
@@ -70,11 +83,16 @@ header {
     top: 0px;
     z-index: 99;
 }
-main{
-    margin-top: 80px;
+#titlePage{
+    padding-top: 80px !important;
 }
 .nav-menu {
     display: flex;
+
+    a{
+        text-decoration: none;
+        color: var(--primary-color);
+    }
 }
 
 .hamburguer {
@@ -227,7 +245,7 @@ main{
 .elementNumber{
     font-family: "Nanum Pen Script", cursive;
     font-size: 1.5rem;
-    color: var(--primary-color) !important;
+    color: var(--primary-color) ;
     -webkit-text-stroke-width: 0px;
 }
 
@@ -493,9 +511,174 @@ ul{
 .overviewNumbers{
     display: grid;
     grid-template-columns:1fr;
+
+
+
+    .containerNumber{
+        display: flex;
+        flex-direction: column;
+        
+        div{
+            display: flex;
+            font-size: 80px;
+            color: var(--background-color);
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: #595959;
+            font-weight: 900;
+            font-family: 'TT Firs Neue Trl', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            &:hover{
+                color: var(--primary-color);
+                -webkit-text-stroke-width: 0px;
+            }
+
+            span{
+                
+                font-size: 2.5rem;
+                font-family: "Nanum Pen Script", cursive !important;
+                color: #FF3366;
+                -webkit-text-stroke-width: 0;
+                margin: auto 0;
+                margin-left: 10px;
+            }
+        }
+
+        .subTitleNumber{
+            color: #747474;
+            font-size: 1rem;
+            
+            font-weight: 500;
+            max-width: 38rem;
+            padding-bottom: 2rem;
+        }
+    }
 }
 
+.review{
+    display: grid;
+    grid-template-columns:1fr;
+    grid-gap: 3rem;
+    margin: 20px auto;
 
+    a{
+        color: #747474;
+        margin: 0 0 3rem;
+        p{
+            font-size: 1.25rem;
+            
+            font-weight: 400;
+            padding-bottom: 1rem;
+            font-style: italic;
+    
+            strong{
+                color: var(--background-color);
+                font-weight: 500;
+                
+                padding: 1px 0.25rem;
+                background: linear-gradient(180deg, rgba(0, 229, 153, 0) 12%, #00e599 12%, #00e599 88%, rgba(0, 229, 153, 0) 88%);
+            }
+            
+        }
+
+        &:hover{
+            color: var(--primary-color);
+
+            #nameAvatar{
+
+                span{
+                    font-size: inherit;
+                }
+            }
+            div{
+                
+                .avatar1{
+                    background-color: #00e599;
+                    transform: scale(0.8);
+                    box-shadow: 0 0 0 16px #181818, inset 0 0 0 1px #181818;
+                    img{
+                        mix-blend-mode: luminosity;
+                        
+                        
+                    }
+                }
+                .avatar2{
+                    background-color: #ffd91a ;
+                    transform: scale(0.8);
+                    box-shadow: 0 0 0 16px #181818, inset 0 0 0 1px #181818;
+                    img{
+                        mix-blend-mode: luminosity;
+                        
+                        
+                    }
+                }
+                .avatar3{
+
+                    background-color: #FF7733 ;
+                    transform: scale(0.8);
+                    box-shadow: 0 0 0 16px #181818, inset 0 0 0 1px #181818;
+                    img{
+                        mix-blend-mode: luminosity;
+                        
+                        
+                    }
+                }
+            }
+        }
+        
+        div{
+            display: flex;
+            gap: 10px;
+
+            .avatar{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                overflow: hidden;
+                
+                img{
+                width: 100%;
+                height: auto;
+                border-radius: 50%;
+                
+                }
+            }
+            
+        }
+
+        .textAvatar{
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
+            font-size: 14px;
+            letter-spacing: 0.5;
+            text-transform: uppercase;
+            font-style: normal;
+            font-weight: 900 !important;
+        }
+        #nameAvatar{
+            color: var(--primary-color);
+            span{
+                font-size: 0;
+            }
+        }
+        
+
+    }
+            
+    a:nth-child(2){
+        p{
+            strong{
+                background: linear-gradient(180deg, rgba(255, 217, 26, 0) 12%, #ffd91a 12%, #ffd91a 88%, rgba(255, 217, 26, 0) 88%);
+            }
+        }
+    }
+    a:nth-child(3){
+        p{
+            strong{
+                background: linear-gradient(180deg, rgba(255, 119, 51, 0) 12%, #ff7733 12%, #ff7733 88%, rgba(255, 119, 51, 0) 88%);
+            }
+        }
+    }
+}
 
 
 
