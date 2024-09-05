@@ -41,3 +41,10 @@ window.addEventListener('scroll',()=>{
         document.querySelector('#notify a').style.backgroundColor = ''
     }
 })
+
+const questions = document.querySelectorAll('.faq')
+questions.forEach((question, index) => {
+    question.addEventListener('click', () => {
+        question.classList.toggle('active')
+        })
+})
