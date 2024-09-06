@@ -1,7 +1,22 @@
 const menuHamburguer = document.getElementById('menuHamburguer')
 menuHamburguer.addEventListener('click', () => {
     menuHamburguer.classList.toggle('active')
+    document.querySelector('.menu').classList.toggle('menu-active')
 })
+const menuPrimmary = document.querySelectorAll('.menu-primary ul li a')
+menuPrimmary.forEach(element => {
+    element.addEventListener('click',()=>{ 
+        menuHamburguer.classList.toggle('active')
+        document.querySelector('.menu').classList.toggle('menu-active')  
+    })
+});
+const menuSecudary = document.querySelectorAll('.menu-secondary ul li a')
+menuSecudary.forEach(element => {
+    element.addEventListener('click',()=>{ 
+        menuHamburguer.classList.toggle('active')
+        document.querySelector('.menu').classList.toggle('menu-active')  
+    })
+});
 
 const inputFocus = document.querySelectorAll('.inputText input')
 const labelFocus = document.querySelectorAll('.inputText')
@@ -48,3 +63,46 @@ questions.forEach((question, index) => {
         question.classList.toggle('active')
         })
 })
+
+const aModules = document.querySelector('.gridModules')
+aModules.addEventListener('click',()=>{
+    aModules.classList.toggle('active')
+})
+
+const mouse = document.querySelectorAll('.mouse');
+
+function animateMouse(mouse) {
+    
+    let xPosPercent = Math.random() * 100;
+    let yPosPercent = Math.random() * 100;
+    let xSpeed = (Math.random() - 0.5) * 0.5; 
+    let ySpeed = (Math.random() - 0.5) * 0.5;
+
+    function moveMouse() {
+        xPosPercent += xSpeed;
+        yPosPercent += ySpeed;
+
+        mouse.style.left = `${xPosPercent}%`;
+        mouse.style.top = `${yPosPercent}%`;
+        if (xPosPercent > 100 || xPosPercent < 0) {
+            xSpeed = -xSpeed;
+            xPosPercent = Math.max(0, Math.min(xPosPercent, 100));
+        }
+
+        if (yPosPercent > 100 || yPosPercent < 0) {
+            ySpeed = -ySpeed;
+            yPosPercent = Math.max(0, Math.min(yPosPercent, 100));
+        }
+        
+        requestAnimationFrame(moveMouse);
+    }
+
+    
+    requestAnimationFrame(moveMouse);
+}
+
+mouse.forEach(mouse => {
+    animateMouse(mouse);
+});
+
+
