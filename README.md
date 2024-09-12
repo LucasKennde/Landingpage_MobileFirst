@@ -17,3 +17,12 @@ O objetivo deste repositório é **apenas educacional**, para aprender e pratica
 ---
 
 ©2024 MDS. All rights reserved. [Terms](#) • [Privacy](#)
+
+Desktop: 
+
+![image](https://github.com/user-attachments/assets/6396aab9-8097-4338-ad6e-5f84fda574c0)
+
+Mobile
+
+![image](https://github.com/user-attachments/assets/ed720cec-13df-4866-a5be-9e27eba77615)
+
